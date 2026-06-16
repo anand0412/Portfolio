@@ -1,0 +1,41 @@
+[
+  {
+    "id": "neha",
+    "title": "Neha Online Studio",
+    "client": "Neha Online Studio",
+    "category": "Social Media",
+    "year": "2025",
+    "thumbnail": "Artboard 1.png",
+    "page": "project-neha.html"
+  },
+
+  {
+    "id": "kashi",
+    "title": "Kashi Vishwanath Yatra",
+    "client": "Kashi Vishwanath Yatra Travels",
+    "category": "Website Banner",
+    "year": "2025",
+    "thumbnail": "Website Banner2.jpg",
+    "page": "project-kashi.html"
+  },
+
+  {
+    "id": "ai-training",
+    "title": "Shri Kashi Vishwanath Temple",
+    "client": "Shri Kashi Vishwanath Temple",
+    "category": "Backdrop",
+    "year": "2026",
+    "thumbnail": "AI Backdrop.jpg",
+    "page": "project-ai-training.html"
+  },
+
+  {
+    "id": "hiora",
+    "title": "Hiora Bags",
+    "client": "Hiora Lifestyle",
+    "category": "Social Media",
+    "year": "2025",
+    "thumbnail": "HIORA2.jpg",
+    "page": "Project-Hiora.html"
+  }
+]
