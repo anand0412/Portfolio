@@ -294,12 +294,18 @@ document.getElementById("card-count").textContent =
 cardCount + " Design";
 
 fetch("data/projects.json")
-  .then(response => response.json())
-  .then(projects => {
+.then(response => response.json())
+.then(projects => {
 
     console.log("Projects Loaded:", projects);
 
-  })
-  .catch(error => {
+    projects.forEach(project => {
+        console.log(project.title);
+    });
+
+})
+.catch(error => {
+
     console.error("JSON Load Error:", error);
-  });
+
+});
