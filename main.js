@@ -299,8 +299,43 @@ fetch("data/projects.json")
 
     console.log("Projects Loaded:", projects);
 
+    const projectGrid =
+    document.getElementById("project-grid");
+
+    projectGrid.innerHTML = "";
+
     projects.forEach(project => {
-        console.log(project.title);
+
+        projectGrid.innerHTML += `
+
+        <div class="project-card">
+
+            <img src="${project.thumbnail}">
+
+            <div class="project-content">
+
+                <h3>${project.title}</h3>
+
+                <p>${project.client}</p>
+
+                <div class="project-info">
+
+                    <span>
+                        ${project.images.length} Designs
+                    </span>
+
+                    <span>
+                        ${project.year}
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
     });
 
 })
