@@ -3,39 +3,66 @@
     "id": "neha",
     "title": "Neha Online Studio",
     "client": "Neha Online Studio",
-    "category": "Social Media",
-    "year": "2025",
-    "thumbnail": "Artboard 1.png",
-    "page": "project-neha.html"
-  },
-
-  {
-    "id": "kashi",
-    "title": "Kashi Vishwanath Yatra",
-    "client": "Kashi Vishwanath Yatra Travels",
-    "category": "Website Banner",
-    "year": "2025",
-    "thumbnail": "Website Banner2.jpg",
-    "page": "project-kashi.html"
-  },
-
-  {
-    "id": "ai-training",
-    "title": "Shri Kashi Vishwanath Temple",
-    "client": "Shri Kashi Vishwanath Temple",
-    "category": "Backdrop",
-    "year": "2026",
-    "thumbnail": "AI Backdrop.jpg",
-    "page": "project-ai-training.html"
+    "year": 2025,
+    "categories": ["Social Media"],
+    "thumbnail": "images/neha/Artboard 1.png",
+    "images": [
+      "images/neha/Artboard 1.png",
+      "images/neha/1_v2.jpg",
+      "images/neha/2_v2.jpg",
+      "images/neha/3_v2.jpg"
+    ]
   },
 
   {
     "id": "hiora",
     "title": "Hiora Bags",
     "client": "Hiora Lifestyle",
-    "category": "Social Media",
-    "year": "2025",
-    "thumbnail": "HIORA2.jpg",
-    "page": "Project-Hiora.html"
+    "year": 2024,
+    "categories": ["Social Media"],
+    "thumbnail": "images/hiora/HIORA2.jpg",
+    "images": [
+      "images/hiora/HIORA2.jpg",
+      "images/hiora/HIORA3.jpg",
+      "images/hiora/HIORA4.jpg",
+      "images/hiora/HIORA5.jpg",
+      "images/hiora/HIORA6.jpg",
+      "images/hiora/HIORA7.jpg",
+      "images/hiora/HIORA8.jpg",
+      "images/hiora/HIORA9.jpg"
+    ]
+  },
+
+  {
+    "id": "kashi",
+    "title": "Kashi Vishwanath Yatra",
+    "client": "Kashi Vishwanath Yatra Travels",
+    "year": 2025,
+    "categories": [
+      "Website Banner",
+      "Visiting Card"
+    ],
+    "thumbnail": "images/kashi/WebsiteBanner2.jpg",
+    "images": [
+      "images/kashi/Website Banner2.jpg",
+      "images/kashi/Website Banner4.jpg",
+      "images/kashi/Visiting Card Front.jpg"
+    ]
+  },
+
+  {
+    "id": "ai-training",
+    "title": "AI Training",
+    "client": "Shri Kashi Vishwanath Temple",
+    "year": 2026,
+    "categories": [
+      "Backdrop"
+    ],
+    "thumbnail": "images/kashi-vishwanath/AI Backdrop.jpg",
+    "images": [
+      "images/kashi-vishwanath/AI Backdrop.jpg",
+      "images/kashi-vishwanath/AI Backdrop2.jpg"
+      "images/kashi-vishwanath/ChatGPT Image May 29, 2026, 04_11_49 PM.png"
+    ]
   }
 ]
