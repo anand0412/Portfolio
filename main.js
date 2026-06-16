@@ -292,3 +292,14 @@ backdropCount + " Designs";
 
 document.getElementById("card-count").textContent =
 cardCount + " Design";
+
+fetch("data/projects.json")
+  .then(response => response.json())
+  .then(projects => {
+
+    console.log("Projects Loaded:", projects);
+
+  })
+  .catch(error => {
+    console.error("JSON Load Error:", error);
+  });
