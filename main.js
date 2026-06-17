@@ -382,6 +382,53 @@ projects.forEach(project => {
         `;
 
     });
+  
+    const gallery =
+document.getElementById("gallery");
+
+gallery.innerHTML = "";
+
+projects.forEach(project => {
+
+    let cssClass = "";
+
+    if(project.categories.includes("Social Media"))
+        cssClass = "social";
+
+    else if(project.categories.includes("Backdrop"))
+        cssClass = "backdrop";
+
+    else if(project.categories.includes("Website Banner"))
+        cssClass = "banner";
+
+    else if(project.categories.includes("Visiting Card"))
+        cssClass = "card-type";
+
+    project.images.forEach(image => {
+
+        gallery.innerHTML += `
+
+        <div class="card ${cssClass}">
+
+            <img src="${image}">
+
+            <div class="overlay">
+
+                <h3>${project.title}</h3>
+
+                <p>${project.categories.join(", ")}</p>
+
+                <span>${project.year}</span>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+});
 
 });
 
