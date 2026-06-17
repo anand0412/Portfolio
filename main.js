@@ -269,17 +269,44 @@ progress + "%";
 
 });
 
-const socialCount =
-document.querySelectorAll(".gallery .social").length;
+fetch("data/projects.json")
+.then(response => response.json())
+.then(projects => {
 
-const bannerCount =
-document.querySelectorAll(".gallery .banner").length;
+    console.log("Projects Loaded:", projects);
 
-const backdropCount =
-document.querySelectorAll(".gallery .backdrop").length;
+    let socialCount = 0;
+let bannerCount = 0;
+let backdropCount = 0;
+let cardCount = 0;
 
-const cardCount =
-document.querySelectorAll(".gallery .card-type").length;
+projects.forEach(project => {
+
+    if(project.categories.includes("Social Media")){
+
+        socialCount += project.images.length;
+
+    }
+
+    if(project.categories.includes("Website Banner")){
+
+        bannerCount += project.images.length;
+
+    }
+
+    if(project.categories.includes("Backdrop")){
+
+        backdropCount += project.images.length;
+
+    }
+
+    if(project.categories.includes("Visiting Card")){
+
+        cardCount += project.images.length;
+
+    }
+
+});
 
 document.getElementById("social-count").textContent =
 socialCount + " Designs";
@@ -291,13 +318,7 @@ document.getElementById("backdrop-count").textContent =
 backdropCount + " Designs";
 
 document.getElementById("card-count").textContent =
-cardCount + " Design";
-
-fetch("data/projects.json")
-.then(response => response.json())
-.then(projects => {
-
-    console.log("Projects Loaded:", projects);
+cardCount + " Designs";
 
     /* FEATURED PROJECTS */
 
