@@ -299,6 +299,8 @@ fetch("data/projects.json")
 
     console.log("Projects Loaded:", projects);
 
+    /* FEATURED PROJECTS */
+
     const projectGrid =
     document.getElementById("project-grid");
 
@@ -340,97 +342,55 @@ class="project-card-link">
 </a>
 
 `;
-const gallery =
-document.getElementById("gallery");
-
-projects.forEach(project => {
-
-    let cssClass = "";
-
-    if(project.categories.includes("Social Media"))
-        cssClass = "social";
-
-    else if(project.categories.includes("Backdrop"))
-        cssClass = "backdrop";
-
-    else if(project.categories.includes("Website Banner"))
-        cssClass = "banner";
-
-    else if(project.categories.includes("Visiting Card"))
-        cssClass = "card-type";
-
-    project.images.forEach(image => {
-
-        gallery.innerHTML += `
-
-        <div class="card ${cssClass}">
-
-            <img src="${image}">
-
-            <div class="overlay">
-
-                <h3>${project.title}</h3>
-
-                <p>${project.categories.join(", ")}</p>
-
-                <span>${project.year}</span>
-
-            </div>
-
-        </div>
-
-        `;
 
     });
-  
+
+    /* FEATURED WORKS */
+
     const gallery =
-document.getElementById("gallery");
+    document.getElementById("gallery");
 
-gallery.innerHTML = "";
+    gallery.innerHTML = "";
 
-projects.forEach(project => {
+    projects.forEach(project => {
 
-    let cssClass = "";
+        let cssClass = "";
 
-    if(project.categories.includes("Social Media"))
-        cssClass = "social";
+        if(project.categories.includes("Social Media"))
+            cssClass = "social";
 
-    else if(project.categories.includes("Backdrop"))
-        cssClass = "backdrop";
+        else if(project.categories.includes("Backdrop"))
+            cssClass = "backdrop";
 
-    else if(project.categories.includes("Website Banner"))
-        cssClass = "banner";
+        else if(project.categories.includes("Website Banner"))
+            cssClass = "banner";
 
-    else if(project.categories.includes("Visiting Card"))
-        cssClass = "card-type";
+        else if(project.categories.includes("Visiting Card"))
+            cssClass = "card-type";
 
-    project.images.forEach(image => {
+        project.images.forEach(image => {
 
-        gallery.innerHTML += `
+            gallery.innerHTML += `
 
-        <div class="card ${cssClass}">
+<div class="card ${cssClass}">
 
-            <img src="${image}">
+    <img src="${image}">
 
-            <div class="overlay">
+    <div class="overlay">
 
-                <h3>${project.title}</h3>
+        <h3>${project.title}</h3>
 
-                <p>${project.categories.join(", ")}</p>
+        <p>${project.categories.join(", ")}</p>
 
-                <span>${project.year}</span>
+        <span>${project.year}</span>
 
-            </div>
+    </div>
 
-        </div>
+</div>
 
-        `;
+`;
 
-    });
-
-});
-
-});
+        });
 
     });
 
