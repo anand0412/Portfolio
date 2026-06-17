@@ -308,33 +308,38 @@ fetch("data/projects.json")
 
         projectGrid.innerHTML += `
 
-        <div class="project-card">
+<a href="project.html?id=${project.id}"
+class="project-card-link">
 
-            <img src="${project.thumbnail}">
+<div class="project-card">
 
-            <div class="project-content">
+    <img src="${project.thumbnail}">
 
-                <h3>${project.title}</h3>
+    <div class="project-content">
 
-                <p>${project.client}</p>
+        <h3>${project.title}</h3>
 
-                <div class="project-info">
+        <p>${project.client}</p>
 
-                    <span>
-                        ${project.images.length} Designs
-                    </span>
+        <div class="project-info">
 
-                    <span>
-                        ${project.year}
-                    </span>
+            <span>
+                ${project.images.length} Designs
+            </span>
 
-                </div>
-
-            </div>
+            <span>
+                ${project.year}
+            </span>
 
         </div>
 
-        `;
+    </div>
+
+</div>
+
+</a>
+
+`;
 
     });
 
