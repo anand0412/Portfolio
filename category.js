@@ -61,9 +61,13 @@ fetch("data/projects.json")
 
                 gallery.innerHTML += `
 
-                <img src="${image}">
+                <div class="card">
 
-                `;
+                    <img src="${image}">
+
+                </div>
+
+            `;
 
             });
 
