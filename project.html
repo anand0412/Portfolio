@@ -46,6 +46,45 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </section>
 
+<div class="case-study">
+
+    <div class="case-card">
+        <h3>Industry</h3>
+        <p id="project-industry"></p>
+    </div>
+
+    <div class="case-card">
+        <h3>Role</h3>
+        <p id="project-role"></p>
+    </div>
+
+    <div class="case-card">
+        <h3>Objective</h3>
+        <p id="project-objective"></p>
+    </div>
+
+    <div class="case-card">
+        <h3>Challenge</h3>
+        <p id="project-challenge"></p>
+    </div>
+
+    <div class="case-card">
+        <h3>Solution</h3>
+        <p id="project-solution"></p>
+    </div>
+
+    <div class="case-card">
+        <h3>Deliverables</h3>
+        <p id="project-deliverables"></p>
+    </div>
+
+    <div class="case-card">
+        <h3>Tools Used</h3>
+        <p id="project-tools"></p>
+    </div>
+
+</div>
+
 <section class="project-gallery" id="project-gallery">
 
 </section>
@@ -100,6 +139,27 @@ fetch("data/projects.json")
 
     document.getElementById("project-category").textContent =
     project.categories.join(", ");
+
+    document.getElementById("project-industry").textContent =
+project.industry;
+
+document.getElementById("project-role").textContent =
+project.role;
+
+document.getElementById("project-objective").textContent =
+project.objective;
+
+document.getElementById("project-challenge").textContent =
+project.challenge;
+
+document.getElementById("project-solution").textContent =
+project.solution;
+
+document.getElementById("project-deliverables").textContent =
+project.deliverables;
+
+document.getElementById("project-tools").textContent =
+project.tools;
 
     const gallery =
     document.getElementById("project-gallery");
