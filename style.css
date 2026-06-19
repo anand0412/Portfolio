@@ -1946,3 +1946,58 @@ color:#d4af37;
     line-height:1.8;
     opacity:.85;
 }
+
+/* ==========================
+CASE STUDY
+========================== */
+
+.case-study{
+
+    max-width:1200px;
+
+    margin:60px auto;
+
+    padding:0 20px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.case-card{
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:.3s;
+}
+
+.case-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#d4af37;
+}
+
+.case-card h3{
+
+    margin-bottom:12px;
+
+    color:#d4af37;
+}
+
+.case-card p{
+
+    line-height:1.8;
+
+    opacity:.85;
+}

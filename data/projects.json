@@ -13,6 +13,7 @@
     "tools": "Adobe Photoshop, Canva, Illustrator",
     "description": "...",
     "categories": ["Social Media"],
+    "featured": true,
     "thumbnail": "images/neha/Artboard 1.png",
     "images": [
       "images/neha/Artboard 1.png",
@@ -36,6 +37,7 @@
     "tools": "Adobe Photoshop, Adobe Illustrator, AI Tools",
     "description": "...",
     "categories": ["Social Media"],
+    "featured": true,
     "thumbnail": "images/hiora/HIORA2.jpg",
     "images": [
       "images/hiora/HIORA2.jpg",
@@ -62,6 +64,7 @@
     "deliverables": "Website Banners, Visiting Cards, Tour Package Promotions",
     "tools": "Adobe Photoshop, Illustrator",
     "description": "...", 
+    "featured": true,
     "categories": [
       "Website Banner",
       "Visiting Card"
@@ -87,9 +90,8 @@
     "deliverables": "Event Backdrops, Promotional Creatives, Awareness Material",
     "tools": "Adobe Photoshop, Adobe Illustrator",
     "description": "...",
-    "categories": [
-      "Backdrop"
-    ],
+    "categories": ["Backdrop"],
+    "featured": true,
     "thumbnail": "images/kashi-vishwanath/AI Backdrop.jpg",
     "images": [
       "images/kashi-vishwanath/AI Backdrop.jpg",
