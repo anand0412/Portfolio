@@ -185,30 +185,33 @@ project.tools;
 
     let currentIndex = 0;
 
-        project.images.forEach((image,index) => {
-
-            const img =
-             document.createElement("img");
-
-            img.src = image;
-
-            img.addEventListener("click",()=>{
-
-             currentIndex = index;
-
-             document.querySelector(".lightbox-image").src =
-             image;
-
-                document.querySelector(".lightbox")
-            .classList.add("active");
-
-        });
-
-        const lightbox =
+const lightbox =
 document.querySelector(".lightbox");
 
 const lightboxImage =
 document.querySelector(".lightbox-image");
+
+project.images.forEach((image,index) => {
+
+    const img =
+    document.createElement("img");
+
+    img.src = image;
+
+    img.addEventListener("click",()=>{
+
+        currentIndex = index;
+
+        lightboxImage.src =
+        project.images[currentIndex];
+
+        lightbox.classList.add("active");
+
+    });
+
+    gallery.appendChild(img);
+
+});
 
 document.querySelector(".close-lightbox")
 .addEventListener("click",()=>{
@@ -253,6 +256,7 @@ lightbox.addEventListener("click",(e)=>{
     if(e.target === lightbox){
 
         lightbox.classList.remove("active");
+
     }
 
 });
