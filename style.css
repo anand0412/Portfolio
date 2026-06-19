@@ -1914,7 +1914,7 @@ color:#d4af37;
 .case-study{
 
     max-width:1200px;
-    margin:60px auto;
+    margin:margin:0 auto 60px;;
     padding:0 20px;
 
     display:grid;
@@ -1955,7 +1955,7 @@ CASE STUDY
 
     max-width:1200px;
 
-    margin:60px auto;
+    margin:25px auto 60px;
 
     padding:0 20px;
 
