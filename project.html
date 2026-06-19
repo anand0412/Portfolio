@@ -183,16 +183,83 @@ project.tools;
     const gallery =
     document.getElementById("project-gallery");
 
-    project.images.forEach(image => {
+    let currentIndex = 0;
 
-        const img =
-        document.createElement("img");
+        project.images.forEach((image,index) => {
 
-        img.src = image;
+            const img =
+             document.createElement("img");
 
-        gallery.appendChild(img);
+            img.src = image;
 
-    });
+            img.addEventListener("click",()=>{
+
+             currentIndex = index;
+
+             document.querySelector(".lightbox-image").src =
+             image;
+
+                document.querySelector(".lightbox")
+            .classList.add("active");
+
+        });
+
+        const lightbox =
+document.querySelector(".lightbox");
+
+const lightboxImage =
+document.querySelector(".lightbox-image");
+
+document.querySelector(".close-lightbox")
+.addEventListener("click",()=>{
+
+    lightbox.classList.remove("active");
+
+});
+
+document.querySelector(".lightbox-prev")
+.addEventListener("click",()=>{
+
+    currentIndex--;
+
+    if(currentIndex < 0){
+
+        currentIndex =
+        project.images.length - 1;
+    }
+
+    lightboxImage.src =
+    project.images[currentIndex];
+
+});
+
+document.querySelector(".lightbox-next")
+.addEventListener("click",()=>{
+
+    currentIndex++;
+
+    if(currentIndex >= project.images.length){
+
+        currentIndex = 0;
+    }
+
+    lightboxImage.src =
+    project.images[currentIndex];
+
+});
+
+lightbox.addEventListener("click",(e)=>{
+
+    if(e.target === lightbox){
+
+        lightbox.classList.remove("active");
+    }
+
+});
+
+    gallery.appendChild(img);
+
+});
 
 });
 
