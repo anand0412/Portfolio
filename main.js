@@ -275,6 +275,55 @@ fetch("data/projects.json")
 
     console.log("Projects Loaded:", projects);
 
+    const typeGrid =
+document.getElementById("type-grid");
+
+const categoryMap = {};
+
+projects.forEach(project => {
+
+    project.categories.forEach(category => {
+
+        if(!categoryMap[category]){
+
+            categoryMap[category] = 0;
+        }
+
+        categoryMap[category] +=
+        project.images.length;
+
+    });
+
+});
+
+Object.entries(categoryMap)
+.forEach(([category,count]) => {
+
+    const slug =
+    category.toLowerCase()
+    .replace(/\s+/g,"-");
+
+    typeGrid.innerHTML += `
+
+    <a href="category.html?type=${slug}"
+    class="type-card">
+
+        <div class="type-icon">
+
+            <i class="fas fa-folder-open"></i>
+
+        </div>
+
+        <h3>${category}</h3>
+
+        <p>${count} Designs</p>
+
+    </a>
+
+    `;
+
+});
+
     let socialCount = 0;
 let bannerCount = 0;
 let backdropCount = 0;
