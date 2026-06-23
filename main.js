@@ -357,18 +357,6 @@ projects.forEach(project => {
 
 });
 
-document.getElementById("social-count").textContent =
-socialCount + " Designs";
-
-document.getElementById("banner-count").textContent =
-bannerCount + " Designs";
-
-document.getElementById("backdrop-count").textContent =
-backdropCount + " Designs";
-
-document.getElementById("card-count").textContent =
-cardCount + " Designs";
-
     /* FEATURED PROJECTS */
 
     const projectGrid =
