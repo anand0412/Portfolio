@@ -47,130 +47,6 @@ LIGHTBOX
 ========================== */
 
 /* ==========================
-ADVANCED LIGHTBOX
-========================== */
-
-const galleryImages =
-document.querySelectorAll(".gallery-image");
-
-let currentIndex = 0;
-
-const lightbox =
-document.querySelector(".lightbox");
-
-const lightboxImage =
-document.querySelector(".lightbox-image");
-
-galleryImages.forEach((image,index) => {
-
-    image.addEventListener("click",()=>{
-
-        currentIndex = index;
-
-        lightboxImage.src =
-        image.src;
-
-        lightbox.classList.add("active");
-
-    });
-
-});
-
-document.querySelector(".close-lightbox")
-.addEventListener("click",()=>{
-
-    lightbox.classList.remove("active");
-
-});
-
-document.querySelector(".lightbox-prev")
-.addEventListener("click",()=>{
-
-    currentIndex--;
-
-    if(currentIndex < 0){
-
-        currentIndex =
-        galleryImages.length - 1;
-
-    }
-
-    lightboxImage.src =
-    galleryImages[currentIndex].src;
-
-});
-
-document.querySelector(".lightbox-next")
-.addEventListener("click",()=>{
-
-    currentIndex++;
-
-    if(currentIndex >= galleryImages.length){
-
-        currentIndex = 0;
-
-    }
-
-    lightboxImage.src =
-    galleryImages[currentIndex].src;
-
-});
-
-lightbox.addEventListener("click",(e)=>{
-
-    if(e.target === lightbox){
-
-        lightbox.classList.remove("active");
-
-    }
-
-});
-
-document.addEventListener("keydown",(e)=>{
-
-    if(!lightbox.classList.contains("active"))
-    return;
-
-    if(e.key === "Escape"){
-
-        lightbox.classList.remove("active");
-
-    }
-
-    if(e.key === "ArrowRight"){
-
-        currentIndex++;
-
-        if(currentIndex >= galleryImages.length){
-
-            currentIndex = 0;
-
-        }
-
-        lightboxImage.src =
-        galleryImages[currentIndex].src;
-
-    }
-
-    if(e.key === "ArrowLeft"){
-
-        currentIndex--;
-
-        if(currentIndex < 0){
-
-            currentIndex =
-            galleryImages.length - 1;
-
-        }
-
-        lightboxImage.src =
-        galleryImages[currentIndex].src;
-
-    }
-
-});
-
-/* ==========================
 SCROLL REVEAL
 ========================== */
 
@@ -279,177 +155,130 @@ const categoryMap = {};
 
 projects.forEach(project => {
 
-    project.categories.forEach(category => {
+    ...
 
-        if(!categoryMap[category]){
+});
 
-            categoryMap[category] = 0;
-        }
+/* ==========================
+HOMEPAGE LIGHTBOX
+========================== */
 
-        categoryMap[category] +=
-        project.images.length;
+const galleryImages =
+document.querySelectorAll(".gallery-image");
+
+const lightbox =
+document.querySelector(".lightbox");
+
+const lightboxImage =
+document.querySelector(".lightbox-image");
+
+const closeLightbox =
+document.querySelector(".close-lightbox");
+
+const prevButton =
+document.querySelector(".lightbox-prev");
+
+const nextButton =
+document.querySelector(".lightbox-next");
+
+let currentIndex = 0;
+
+galleryImages.forEach((image,index)=>{
+
+    image.addEventListener("click",()=>{
+
+        currentIndex = index;
+
+        lightboxImage.src =
+        galleryImages[currentIndex].src;
+
+        lightbox.classList.add("active");
 
     });
 
 });
 
-Object.entries(categoryMap)
-.forEach(([category,count]) => {
+closeLightbox.addEventListener("click",()=>{
 
-    const slug =
-    category.toLowerCase()
-    .replace(/\s+/g,"-");
-
-    typeGrid.innerHTML += `
-
-    <a href="category.html?type=${slug}"
-    class="type-card">
-
-        <div class="type-icon">
-
-            <i class="fas fa-folder-open"></i>
-
-        </div>
-
-        <h3>${category}</h3>
-
-        <p>${count} Designs</p>
-
-    </a>
-
-    `;
+    lightbox.classList.remove("active");
 
 });
 
-    let socialCount = 0;
-let bannerCount = 0;
-let backdropCount = 0;
-let cardCount = 0;
+nextButton.addEventListener("click",()=>{
 
-projects.forEach(project => {
+    currentIndex++;
 
-    if(project.categories.includes("Social Media")){
+    if(currentIndex >= galleryImages.length){
 
-        socialCount += project.images.length;
+        currentIndex = 0;
 
     }
 
-    if(project.categories.includes("Website Banner")){
+    lightboxImage.src =
+    galleryImages[currentIndex].src;
 
-        bannerCount += project.images.length;
+});
+
+prevButton.addEventListener("click",()=>{
+
+    currentIndex--;
+
+    if(currentIndex < 0){
+
+        currentIndex =
+        galleryImages.length - 1;
 
     }
 
-    if(project.categories.includes("Backdrop")){
+    lightboxImage.src =
+    galleryImages[currentIndex].src;
 
-        backdropCount += project.images.length;
+});
 
-    }
+lightbox.addEventListener("click",(e)=>{
 
-    if(project.categories.includes("Visiting Card")){
+    if(e.target === lightbox){
 
-        cardCount += project.images.length;
+        lightbox.classList.remove("active");
 
     }
 
 });
 
-    /* FEATURED PROJECTS */
+document.addEventListener("keydown",(e)=>{
 
-    const projectGrid =
-    document.getElementById("project-grid");
+    if(!lightbox.classList.contains("active"))
+    return;
 
-    projectGrid.innerHTML = "";
+    if(e.key === "Escape"){
 
-    projects.forEach(project => {
+        lightbox.classList.remove("active");
 
-        projectGrid.innerHTML += `
+    }
 
-<a href="project.html?id=${project.id}"
-class="project-card-link">
+    if(e.key === "ArrowRight"){
 
-<div class="project-card">
+        nextButton.click();
 
-    <img src="${project.thumbnail}">
+    }
 
-    <div class="project-content">
+    if(e.key === "ArrowLeft"){
 
-        <h3>${project.title}</h3>
+        prevButton.click();
 
-        <p>${project.client}</p>
+    }
 
-        <div class="project-info">
-
-            <span>
-                ${project.images.length} Designs
-            </span>
-
-            <span>
-                ${project.year}
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-
-</a>
-
-`;
-
-    });
-
-    /* FEATURED WORKS */
-
-    const gallery =
-    document.getElementById("gallery");
-
-    gallery.innerHTML = "";
-
-    projects.forEach(project => {
-
-        let cssClass = "";
-
-        if(project.categories.includes("Social Media"))
-            cssClass = "social";
-
-        else if(project.categories.includes("Backdrop"))
-            cssClass = "backdrop";
-
-        else if(project.categories.includes("Website Banner"))
-            cssClass = "banner";
-
-        else if(project.categories.includes("Visiting Card"))
-            cssClass = "card-type";
-
-        project.images.forEach(image => {
-
-            gallery.innerHTML += `
-
-<div class="card ${cssClass}">
-
-    <img src="${image}">
-
-    <div class="overlay">
-
-        <h3>${project.title}</h3>
-
-        <p>${project.categories.join(", ")}</p>
-
-        <span>${project.year}</span>
-
-    </div>
-
-</div>
-
-`;
-
-        });
-
-    });
+});
 
 })
+
+.catch(error => {
+
+    console.error("JSON Load Error:", error);
+
+});
+
+
 .catch(error => {
 
     console.error("JSON Load Error:", error);
